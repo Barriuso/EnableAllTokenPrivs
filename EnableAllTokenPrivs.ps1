@@ -1,5 +1,11 @@
-﻿
+
+function Enable-All-Tokens
+{
 ## All Credit goes to Lee Holmes (@Lee_Holmes on twitter).  I found the code here https://www.leeholmes.com/blog/2010/09/24/adjusting-token-privileges-in-powershell/
+## Import-Module EnableAllTokenPrivs.ps1; Enable-All-Tokens
+## powershell-import EnableAllTokenPrivs.ps1
+## powershell Enable-All-Tokens; whoami /priv
+##TODO Define variables to adjust a few permissions.
 $definition = @'
 using System;
 using System.Collections.Generic;
@@ -70,4 +76,4 @@ namespace Set_TokenPermission
 $type = Add-Type $definition -PassThru
 $type[0]::EnablePrivilege() 2>&1
 
-
+}
